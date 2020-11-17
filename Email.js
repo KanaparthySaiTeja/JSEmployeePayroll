@@ -18,9 +18,9 @@ class Email{
 
 
 try{
-    let email1 = new Email("abhishek@gmail1")
+    let email1 = new Email("Saiteja@gmail1")
     console.log(email1)
-    let email2 = new Email("Abhishek")
+    let email2 = new Email("Sai)
     console.log(email2)
 }catch(e){
     console.log("Error :  " + e)
