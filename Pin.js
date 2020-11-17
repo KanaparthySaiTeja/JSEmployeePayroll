@@ -8,11 +8,8 @@ class PinCode{
         return this._pin;
     }
     set pin(pin){
-        let letterRegex = RegExp('^[^a-zA-z]+$')
-        let splRegex = RegExp('^[!@#$^&%*()+=-[]\/{}|:<>?,.]+$')
-        let pinRegex = RegExp('^[0-9]{3}[\\s]{0,1}[0-9]{3}$')
-        if(letterRegex.test(pin)&& !splRegex.test(pin) && pinRegex.test(pin)){
-            pin = parseInt(pin.replace(" ",""))
+        let pinRegex = RegExp('[0-9]{6}')
+        if(pinRegex.test(pin)){
             this._pin = pin;
         }
         else throw "Incorrect Pin"
@@ -21,12 +18,10 @@ class PinCode{
 
 
 try{
-    let pincode = new PinCode("453 001")
+    let pincode = new PinCode(453001)
+    let pincode1 = new PinCode(48731)
     console.log(pincode)
-    let pincode1 = new PinCode("400088B")
     console.log(pincode1)
-    let pincode2 = new PinCode("400088@")
-    console.log(pincode2)
 }catch(e){
     console.log("Error :  " + e)
 }
